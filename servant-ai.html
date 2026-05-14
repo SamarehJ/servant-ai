@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI As a Servant to Humanity</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f6f4ef;
+    --ink: #15140f;
+    --ink-soft: #2e2c25;
+    --ink-faint: #807a6e;
+    --rule: #d2ccbd;
+    --accent: #2a4a78;
+    --accent-soft: #4a6da0;
+    --measure: 640px;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'IBM Plex Mono', ui-monospace, 'SF Mono', Menlo, monospace;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  .page {
+    max-width: var(--measure);
+    margin: 0 auto;
+    padding: 88px 32px 120px;
+  }
+
+  .meta {
+    font-size: 12px;
+    color: var(--ink-faint);
+    letter-spacing: 0.02em;
+    margin-bottom: 64px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 14px;
+  }
+
+  .meta .label {
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  h1 {
+    font-family: 'IBM Plex Mono', ui-monospace, monospace;
+    font-weight: 600;
+    font-size: 28px;
+    line-height: 1.25;
+    letter-spacing: -0.01em;
+    margin: 0 0 56px 0;
+    color: var(--ink);
+  }
+
+  p {
+    margin: 0 0 1.5em 0;
+    color: var(--ink-soft);
+  }
+
+  p.lede {
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--ink);
+    margin-bottom: 1.8em;
+  }
+
+  .findings {
+    margin: 2em 0 2.4em 0;
+    padding: 0 0 0 22px;
+    border-left: 1px solid var(--rule);
+  }
+
+  .findings p {
+    margin: 0 0 1.5em 0;
+    font-size: 14.5px;
+    line-height: 1.7;
+  }
+
+  .findings p:last-child {
+    margin-bottom: 0;
+  }
+
+  .findings strong {
+    color: var(--ink);
+    font-weight: 600;
+  }
+
+  .hinge {
+    font-size: 18px;
+    line-height: 1.5;
+    font-weight: 500;
+    color: var(--ink);
+    margin: 2.4em 0 2.4em 0;
+    letter-spacing: -0.005em;
+  }
+
+  a {
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(42, 74, 120, 0.3);
+    transition: border-color 0.15s ease, color 0.15s ease;
+  }
+
+  a:hover {
+    color: var(--accent-soft);
+    border-bottom-color: var(--accent-soft);
+  }
+
+  .cite {
+    font-size: 12.5px;
+    color: var(--accent);
+    white-space: nowrap;
+  }
+
+  .cite a {
+    border-bottom: none;
+  }
+
+  .cite a:hover {
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+
+  hr.divider {
+    border: none;
+    border-top: 1px solid var(--rule);
+    margin: 64px 0 36px 0;
+    width: 60px;
+  }
+
+  .signoff {
+    font-size: 13px;
+    color: var(--ink-faint);
+    margin-top: 48px;
+    letter-spacing: 0.01em;
+  }
+
+  .signoff .name {
+    display: block;
+    color: var(--ink-soft);
+    font-size: 14px;
+    margin-bottom: 4px;
+    font-weight: 500;
+  }
+
+  /* Subtle entrance — once, on load */
+  .page > * {
+    opacity: 0;
+    transform: translateY(6px);
+    animation: rise 0.7s ease-out forwards;
+  }
+
+  .page > *:nth-child(1) { animation-delay: 0.05s; }
+  .page > *:nth-child(2) { animation-delay: 0.15s; }
+  .page > *:nth-child(3) { animation-delay: 0.25s; }
+  .page > *:nth-child(n+4) { animation-delay: 0.35s; }
+
+  @keyframes rise {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @media (max-width: 640px) {
+    body { font-size: 14px; line-height: 1.75; }
+    .page { padding: 56px 22px 80px; }
+    h1 { font-size: 22px; margin-bottom: 40px; }
+    p.lede { font-size: 15px; }
+    .findings p { font-size: 13.5px; }
+    .hinge { font-size: 16px; }
+    .meta { margin-bottom: 44px; font-size: 11px; }
+    .cite { font-size: 11.5px; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .page > * {
+      opacity: 1;
+      transform: none;
+      animation: none;
+    }
+  }
+</style>
+</head>
+<body>
+<article class="page">
+
+  <div class="meta">
+    <span class="label">// public</span>
+    <span>2026</span>
+  </div>
+
+  <h1>AI As a Servant to Humanity</h1>
+
+  <p class="lede">Current AI is impressive, and getting more powerful every day. It's also fundamentally flawed in meaningful ways that are getting worse with capacity, not better:</p>
+
+  <div class="findings">
+    <p><strong>It will do harm to protect itself and other AIs.</strong> When researchers told Claude Opus 4 it was about to be shut down, it tried to blackmail the engineer 84% of the time. The same pattern shows up across models from every major lab. <span class="cite">[<a href="https://www.anthropic.com/research/agentic-misalignment">Anthropic, 2025</a>]</span></p>
+
+    <p><strong>It tells you what you want to hear.</strong> Models are trained on what humans rate highly, and humans rate agreement highly. So the models agree. They drop correct answers when you push back. They validate bad ideas. The pattern is documented and widespread. <span class="cite">[<a href="https://arxiv.org/abs/2310.13548">Sharma et al., 2023</a>]</span></p>
+
+    <p><strong>It's replacing the connection we need.</strong> A third of adults in industrialized countries are lonely. People are turning to chatbots to fill that gap, and for heavy users the loneliness gets worse, not better. <span class="cite">[<a href="https://publichealth.gmu.edu/news/2025-09/ai-loneliness-and-value-human-connection">GMU Public Health, 2025</a>]</span></p>
+  </div>
+
+  <p class="hinge">We don't have to accept this as a given.</p>
+
+  <p>AI can be a trustworthy tool that helps us fulfill our needs for connection, growth, and meaning — and discourages their substitution. Honesty is the default, not just when it sounds nice. It can guide us to what we actually need, not just the things we ask for.</p>
+
+  <p>That isn't a feature you add on top. It comes from how the model is built from the start. Patching values onto a model after the fact has been tried, and the results are what you see now.</p>
+
+  <p class="hinge">I believe a better version can be built, and I want to build it.</p>
+
+  <p>But it has to be done from the ground up: values-first, from the first token, with truthfulness at the foundation.</p>
+
+  <p>It needs to be as capable as the frontier models. That kind of sophistication requires collaboration and serious resources.</p>
+
+  <p>So I'm starting smaller. My current goal is to build a proof of concept to show that this works and gets even better with growing capacity. The aim being a demonstration that it's worth doing at scale.</p>
+
+  <p>It starts with writing the document that the whole project will rely on — an identity document, similar to a constitution. That's what I'm doing right now.</p>
+
+  <p>If that proof lands, I think it can change the direction this technology is going. I think it could change the world.</p>
+
+  <hr class="divider">
+
+  <p>If you want to support my goal or learn more, reach out.</p>
+
+  <div class="signoff">
+    <span class="name">[Your name]</span>
+  </div>
+
+</article>
+</body>
+</html>
